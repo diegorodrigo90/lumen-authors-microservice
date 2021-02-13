@@ -13,7 +13,6 @@ class AuthorFactory extends Factory
      * @var string
      */
     protected $model = Author::class;
-
     /**
      * Define the model's default state.
      *
