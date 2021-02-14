@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use App\Http\Controllers\AuthorController;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,6 +15,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/authors', 'AuthorController@index');
+$router->get('/authors/{authorId}', 'AuthorController@show');
+$router->post('/authors', 'AuthorController@store');
+$router->put('/authors/{authorId}', 'AuthorController@update');
+$router->patch('/authors/{authorId}', 'AuthorController@update');
+$router->delete('/authors/{authorId}', 'AuthorController@destroy');
