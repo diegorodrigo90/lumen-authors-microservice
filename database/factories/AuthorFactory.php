@@ -21,7 +21,7 @@ class AuthorFactory extends Factory
     public function definition()
     {
         return [
-            'uuid' => 'uuid' => Str::uuid()->toString(),
+            'uuid' => Str::uuid()->toString(),
             'gender' => $gender = $this->faker->randomElement(['male', 'female']),
             'name' => $this->faker->name($gender),
             'country' => $this->faker->country,
