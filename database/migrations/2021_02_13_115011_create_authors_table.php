@@ -14,7 +14,7 @@ class CreateAuthorsTable extends Migration
     public function up()
     {
         Schema::create('authors', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('uuid')->unique()->primary();
             $table->string('name');
             $table->enum('gender', ['male', 'female']);
             $table->string('country');
