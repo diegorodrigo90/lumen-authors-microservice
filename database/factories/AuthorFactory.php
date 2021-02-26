@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 class AuthorFactory extends Factory
 {
     /**
@@ -21,6 +21,7 @@ class AuthorFactory extends Factory
     public function definition()
     {
         return [
+            'uuid' => 'uuid' => Str::uuid()->toString(),
             'gender' => $gender = $this->faker->randomElement(['male', 'female']),
             'name' => $this->faker->name($gender),
             'country' => $this->faker->country,
